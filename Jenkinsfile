@@ -15,6 +15,13 @@ pipeline {
                         sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }
+
+                sshagent(['ssh-agent-docker']) {
+                    sh 'ssh -tt ubuntu@100.26.171.231
+                        touch test.txt 
+                    
+                    '
+                }
             }
         }
     }
