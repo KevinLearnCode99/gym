@@ -1,8 +1,5 @@
 pipeline {
     agent any  // This specifies that any available agent/node can execute this pipeline
-
-
-
     stages {
         stage('Checkout') {
             steps {
