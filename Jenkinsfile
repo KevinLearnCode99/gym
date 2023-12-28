@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "hello"
+                echo "hello from jenkinsfile"
                 git branch: 'main', url: 'https://github.com/KevinLearnCode99/gym.git'
             }
         }
