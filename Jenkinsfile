@@ -19,8 +19,7 @@ pipeline {
                 sshagent(['ssh-agent-docker']) {
                     sh '''
                         ssh -tt -oStrictHostKeyChecking=no ubuntu@100.26.171.231 
-                        touch test.txt
-                    
+                        ssh -tt -oStrictHostKeyChecking=no ubuntu@100.26.171.231 touch test.txt
                     '''
                 }
             }
