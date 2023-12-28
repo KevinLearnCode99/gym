@@ -19,7 +19,19 @@ pipeline {
                 sshagent(['ssh-agent-docker']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@100.26.171.231 'cd website;rm -rf *'
-                      scp -o StrictHostKeyChecking=no -r * ubuntu@100.26.171.231:~/website
+                    scp -o StrictHostKeyChecking=no -r * ubuntu@100.26.171.231:~/website
+                    ssh -o StrictHostKeyChecking=no ubuntu@100.26.171.231 '
+                                cd website;
+                                sudo docker stop $(docker ps -aq
+                                sudo docker rm $(docker ps -aq)
+                                sudo docker build -t mydockerimage .;
+                                sudo docker run -d -p 8080:80 mydockerimage
+                            '
+
+
+
+
+
                     '''
                 }
             }
