@@ -18,7 +18,7 @@ pipeline {
 
                 sshagent(['ssh-agent-docker']) {
                     sh '''
-                      scp -o StrictHostKeyChecking=no -r * ubuntu@100.26.171.231:/website
+                      scp -o StrictHostKeyChecking=no -r * ubuntu@100.26.171.231:~/website
         '
 
                     '''
